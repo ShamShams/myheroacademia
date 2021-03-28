@@ -1,3 +1,8 @@
+export const colors = {
+  yellow: "#F6D63F",
+  black: "#121214",
+};
+
 export const screenSizes = {
   sm: "576px",
   md: "768px",

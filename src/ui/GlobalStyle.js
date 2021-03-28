@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { colors } from "./variables";
 
 const GlobalStyle = createGlobalStyle`
 html {
@@ -12,7 +13,8 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: hsla(0, 0%, 0%, 0.8);
+  color: #EEEEEE;
+  background-color: ${colors.black};
   font-family: georgia, serif;
   font-weight: normal;
   word-wrap: break-word;
