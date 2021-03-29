@@ -1,3 +1,7 @@
+import { createGlobalStyle } from "styled-components";
+import { colors } from "./variables";
+
+const GlobalStyle = createGlobalStyle`
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -9,8 +13,9 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: hsla(0, 0%, 0%, 0.8);
-  font-family: georgia, serif;
+  color: #EEEEEE;
+  background-color: ${colors.black};
+  font-family: "Open Sans", sans-serif;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -111,14 +116,8 @@ sup {
 img {
   border-style: none;
   max-width: 100%;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin: 0;
+  padding: 0;
 }
 svg:not(:root) {
   overflow: hidden;
@@ -595,3 +594,6 @@ pre tt:after {
     font-size: 100%;
   }
 }
+`;
+
+export default GlobalStyle;
