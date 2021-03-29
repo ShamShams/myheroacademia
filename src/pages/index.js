@@ -1,28 +1,45 @@
 import * as React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 
-import { Layout, SEO } from "../components";
+import { shuffleArray } from "../functions";
+import { Card, Layout, SEO } from "../components";
+import { CardList, Container } from "../ui";
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     {
-      allCharacter(limit: 5, filter: { occupation: { eq: "Student" } }) {
+      allCharacter(limit: 20, filter: { occupation: { eq: "Student" } }) {
         nodes {
           id
           name
-          occupation
           alias
+          affiliation
+          occupation
           images
           quirk
         }
       }
     }
   `);
-  console.log(data.allCharacter.nodes);
+
+  const characters = data.allCharacter.nodes;
+  shuffleArray(characters);
 
   return (
     <Layout>
       <SEO />
+      <Container>
+        <CardList>
+          {characters.map((character) => {
+            Object.keys(character).forEach((key) => {
+              if (!character[key]) {
+                character[key] = "Unknow";
+              }
+            });
+            return <Card key={character.id} {...character} />;
+          })}
+        </CardList>
+      </Container>
     </Layout>
   );
 };

@@ -15,7 +15,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: #EEEEEE;
   background-color: ${colors.black};
-  font-family: georgia, serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -116,14 +116,8 @@ sup {
 img {
   border-style: none;
   max-width: 100%;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin: 0;
+  padding: 0;
 }
 svg:not(:root) {
   overflow: hidden;
