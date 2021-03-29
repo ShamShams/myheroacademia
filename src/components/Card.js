@@ -6,7 +6,7 @@ import { colors } from "../ui/variables";
 const Container = styled.div`
   display: flex;
   flex-direction: row;
-  height: 135px;
+  height: 150px;
   border-radius: 2px;
 `;
 
@@ -21,7 +21,6 @@ const Image = styled.img`
 const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   padding: 10px 20px;
 `;
 
@@ -42,7 +41,7 @@ const Label = styled.span`
 
 const Text = styled.p`
   color: ${colors.white};
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
   line-height: 1.3;
   margin-bottom: 0;
@@ -55,23 +54,35 @@ const Alias = styled(Text)`
   margin-bottom: 4px;
 `;
 
-const Card = ({ name, alias, occupation, affiliation, images, quirk }) => (
-  <Container>
-    {images && <Image src={images[images.length - 1]} alt="Personnage" />}
-    <TextContainer>
-      <Name>{name}</Name>
-      <Alias>{alias}</Alias>
-      <Text>
-        <Label>Quirk :{"  "}</Label>
-        {quirk}
-      </Text>
-      <Text>
-        <Label>Occupation :{"  "}</Label>
-        {occupation}
-      </Text>
-    </TextContainer>
-  </Container>
-);
+const Card = ({ id, name, alias, occupation, affiliation, images, quirk }) => {
+  const image = images[images.length - 1];
+
+  return (
+    <Container>
+      <Image src={image} alt="Character" />
+      <TextContainer>
+        <Name>{name}</Name>
+        <Alias>{alias}</Alias>
+        <Text>
+          <Label>id :{"  "}</Label>
+          {id}
+        </Text>
+        <Text>
+          <Label>Quirk :{"  "}</Label>
+          {quirk}
+        </Text>
+        <Text>
+          <Label>Occupation :{"  "}</Label>
+          {occupation}
+        </Text>
+        <Text>
+          <Label>Affiliation :{"  "}</Label>
+          {affiliation}
+        </Text>
+      </TextContainer>
+    </Container>
+  );
+};
 
 Card.propTypes = {
   name: PropTypes.string,

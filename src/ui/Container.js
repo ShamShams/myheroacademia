@@ -9,7 +9,7 @@ const Container = styled.div`
   margin-right: auto;
   padding-left: 30px;
   padding-right: 30px;
-  max-width: 1250px;
+  max-width: 1200px;
   @media screen and (max-width: ${screenSizes.lg}) {
     max-width: 920px;
   }
